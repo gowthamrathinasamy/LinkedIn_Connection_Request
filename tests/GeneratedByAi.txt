@@ -1,0 +1,47 @@
+import { test } from '@playwright/test';
+
+const LINKEDIN_LOGIN_URL = 'https://www.linkedin.com/login';
+const LINKEDIN_SEARCH_URL = 'https://www.linkedin.com/search/results/people/';
+const TOTAL_REQUESTS = 50;
+const REQUESTS_PER_BATCH = 5;
+
+async function clickConnectButtons(page, maxRequests) {
+  for (let sent = 0; sent < maxRequests; sent++) {
+    const connectButton = page.locator('button:has-text("Connect")').first();
+    if (!(await connectButton.count())) {
+      break;
+    }
+    await connectButton.scrollIntoViewIfNeeded();
+    await connectButton.click();
+
+    const sendNowButton = page.locator('button:has-text("Send now")');
+    if (await sendNowButton.count()) {
+      await sendNowButton.first().click();
+    }
+
+    await page.waitForTimeout(800);
+  }
+}
+
+test('send LinkedIn connection requests in batches of 50 per page', async ({ page }) => {
+  await page.goto(LINKEDIN_LOGIN_URL);
+  const usernameInput = page.locator('input[type="email"]');
+  const passwordInput = page.locator('input[type="password"]');
+  await usernameInput.fill(process.env.LINKEDIN_USERNAME);
+  await passwordInput.fill(process.env.LINKEDIN_PASSWORD);
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: 'networkidle' }),
+    page.click('button[type="submit"]'),
+  ]);
+
+  await page.goto(LINKEDIN_SEARCH_URL);
+  await page.waitForLoadState('networkidle');
+
+  const batchCount = Math.ceil(TOTAL_REQUESTS / REQUESTS_PER_BATCH);
+  for (let batch = 0; batch < batchCount; batch++) {
+    await clickConnectButtons(page, REQUESTS_PER_BATCH);
+    if (batch < batchCount - 1) {
+      await page.reload({ waitUntil: 'networkidle' });
+    }
+  }
+});

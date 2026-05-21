@@ -1,0 +1,1245 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: connectionRequest.spec.js >> send connection requests safely
+- Location: tests/connectionRequest.spec.js:6:5
+
+# Error details
+
+```
+Test timeout of 50000ms exceeded.
+```
+
+```
+Error: page.waitForLoadState: Test timeout of 50000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - heading "0 notifications" [level=2] [ref=e3]
+  - generic [ref=e4]:
+    - generic:
+      - button [ref=e5] [cursor=pointer]:
+        - generic [ref=e7]: Skip to main content
+      - button [ref=e8] [cursor=pointer]:
+        - img [ref=e10]
+    - generic [ref=e12]:
+      - banner [ref=e14]:
+        - generic [ref=e17]:
+          - button "LinkedIn" [ref=e18] [cursor=pointer]:
+            - img "LinkedIn" [ref=e19]
+          - generic [ref=e21]:
+            - status [ref=e22]
+            - search [ref=e23]:
+              - generic [ref=e24]:
+                - img [ref=e26]
+                - textbox "Search" [ref=e28]
+          - generic [ref=e30]:
+            - generic [ref=e34]:
+              - figure [ref=e35]
+              - figure [ref=e36]
+              - figure [ref=e37]
+              - figure [ref=e38]
+            - navigation [ref=e41]:
+              - list [ref=e42]:
+                - listitem [ref=e43]:
+                  - button "Home, 1 new notification" [ref=e44] [cursor=pointer]:
+                    - img [ref=e46]
+                    - generic [ref=e50]: Home
+                - listitem [ref=e51]:
+                  - link "My Network, 0 new notifications" [ref=e52] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mynetwork
+                    - img [ref=e54]
+                    - generic [ref=e57]: My Network
+                - listitem [ref=e58]:
+                  - link "Jobs, 0 new notifications" [ref=e59] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/jobs/
+                    - img [ref=e61]
+                    - generic [ref=e64]: Jobs
+                - listitem [ref=e65]:
+                  - link "Messaging, 0 new notifications" [ref=e66] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/messaging/
+                    - img [ref=e68]
+                    - generic [ref=e71]: Messaging
+                - listitem [ref=e72]:
+                  - link "Notifications, 0 new notifications" [ref=e73] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/notifications/
+                    - img [ref=e75]
+                    - generic [ref=e78]: Notifications
+                - listitem [ref=e79]:
+                  - button "Me" [ref=e80] [cursor=pointer]:
+                    - figure [ref=e82]
+                    - generic [ref=e84]:
+                      - text: Me
+                      - img [ref=e85]
+            - navigation [ref=e89]:
+              - list [ref=e90]:
+                - listitem [ref=e91]:
+                  - button "For Business" [ref=e92] [cursor=pointer]:
+                    - img [ref=e94]
+                    - generic [ref=e97]:
+                      - text: For Business
+                      - img [ref=e98]
+                - listitem [ref=e100]:
+                  - link "Hire with AI" [ref=e101] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/talent/job-posting-redirect/?trk=nav_spotlight_post_job
+                    - img [ref=e103]
+                    - generic [ref=e108]: Hire with AI
+      - main [ref=e110]:
+        - generic [ref=e112]:
+          - complementary "Sidebar" [ref=e113]:
+            - generic [ref=e116]:
+              - generic [ref=e118]:
+                - paragraph [ref=e119]: Manage my network
+                - navigation [ref=e120]:
+                  - list [ref=e121]:
+                    - listitem [ref=e122]:
+                      - link "Show 429 connections" [ref=e123] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/mynetwork/invite-connect/connections
+                        - img [ref=e125]
+                        - generic [ref=e128]: Connections
+                        - generic [ref=e130]: "429"
+                    - listitem [ref=e131]:
+                      - link "Show people you follow and who follow you" [ref=e132] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/mynetwork/network-manager/people-follow/?filterType=member
+                        - img [ref=e134]
+                        - generic [ref=e137]: Following & followers
+                    - listitem [ref=e138]:
+                      - link "You have joined 0 groups, find groups to join" [ref=e139] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/groups/my-groups/
+                        - img [ref=e141]
+                        - generic [ref=e144]: Groups
+                    - listitem [ref=e145]:
+                      - link "You have 0 events, find events to attend" [ref=e146] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/events/
+                        - img [ref=e148]
+                        - generic [ref=e151]: Events
+                    - listitem [ref=e152]:
+                      - link "Show 101 pages you follow" [ref=e153] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/mynetwork/network-manager/company/
+                        - img [ref=e155]
+                        - generic [ref=e158]: Pages
+                        - generic [ref=e160]: "101"
+                    - listitem [ref=e161]:
+                      - link "Show 22 newsletters you subscribe to" [ref=e162] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/mynetwork/network-manager/newsletters/
+                        - img [ref=e164]
+                        - generic [ref=e167]: Newsletters
+                        - generic [ref=e169]: "22"
+              - iframe [ref=e172]:
+                - link "Advertise on LinkedIn" [ref=f31e3] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/jobs/?trk=li_FA_global_careers_jobsgtm_jsFA_v1&mcid=6899045044465016833
+                  - img "Advertise on LinkedIn" [ref=f31e4]
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - link "About" [ref=e175] [cursor=pointer]:
+                    - /url: https://about.linkedin.com/
+                    - paragraph [ref=e176]: About
+                  - link "Accessibility" [ref=e177] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/accessibility/
+                    - paragraph [ref=e178]: Accessibility
+                  - link "Help Center" [ref=e179] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/help/linkedin/
+                    - paragraph [ref=e180]: Help Center
+                  - button "Privacy & Terms" [ref=e181] [cursor=pointer]:
+                    - generic [ref=e182]:
+                      - paragraph [ref=e183]: Privacy & Terms
+                      - img [ref=e184]
+                  - link "Ad Choices" [ref=e186] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/help/linkedin/answer/62931/
+                    - paragraph [ref=e187]: Ad Choices
+                  - link "Advertising" [ref=e188] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/ad/start/?trk=n_nav_ads_rr
+                    - paragraph [ref=e189]: Advertising
+                  - button "Business Services" [ref=e190] [cursor=pointer]:
+                    - generic [ref=e191]:
+                      - paragraph [ref=e192]: Business Services
+                      - img [ref=e193]
+                  - link "Get the LinkedIn app" [ref=e195] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mobile/
+                    - paragraph [ref=e196]: Get the LinkedIn app
+                  - link "More" [ref=e197] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mynetwork/grow/
+                    - paragraph [ref=e198]: More
+                - generic [ref=e199]:
+                  - img [ref=e200]
+                  - paragraph [ref=e202]: LinkedIn Corporation © 2026
+          - region "Primary content" [ref=e203]:
+            - generic [ref=e204]:
+              - navigation [ref=e208]:
+                - list [ref=e209]:
+                  - listitem [ref=e210]:
+                    - link "0 new grow notifications" [ref=e211] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/mynetwork/grow
+                      - generic [ref=e213]: Grow
+                  - listitem [ref=e214]:
+                    - link "Catch up, 0 new catch up notifications" [ref=e215] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/mynetwork/catch-up/all/
+                      - generic [ref=e217]: Catch up
+              - generic [ref=e220]:
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - heading "No pending invitations" [level=2] [ref=e228]
+                    - link "Manage all invitations" [ref=e229] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/mynetwork/invitation-manager/
+                      - generic [ref=e231]: Manage
+                  - list
+                - generic [ref=e234]:
+                  - generic [ref=e235]:
+                    - heading "If you’re still up… puzzle? 🌚" [level=2] [ref=e236]
+                    - generic [ref=e237]:
+                      - button "Previous" [disabled] [ref=e238]:
+                        - generic:
+                          - img
+                      - button "Next" [ref=e239] [cursor=pointer]:
+                        - img [ref=e241]
+                  - list [ref=e246]:
+                    - listitem [ref=e247]:
+                      - 'link "Patches #65 9 connections played Solve" [ref=e249] [cursor=pointer]':
+                        - /url: https://www.linkedin.com/games/patches/
+                        - generic [ref=e251]:
+                          - figure [ref=e253]
+                          - generic [ref=e254]:
+                            - generic [ref=e255]:
+                              - paragraph [ref=e257]:
+                                - generic [ref=e258]:
+                                  - strong [ref=e259]: Patches
+                                  - text: "#65"
+                              - generic [ref=e260]:
+                                - figure [ref=e261]
+                                - paragraph [ref=e263]: 9 connections played
+                            - generic "Solve" [ref=e264]:
+                              - link "Solve" [ref=e265]:
+                                - /url: https://www.linkedin.com/games/patches/
+                                - generic [ref=e267]: Solve
+                    - listitem [ref=e268]:
+                      - 'link "Mini Sudoku #283 3 connections played Solve" [ref=e270] [cursor=pointer]':
+                        - /url: /games/mini-sudoku/
+                        - generic [ref=e272]:
+                          - figure [ref=e274]
+                          - generic [ref=e275]:
+                            - generic [ref=e276]:
+                              - paragraph [ref=e278]:
+                                - generic [ref=e279]:
+                                  - strong [ref=e280]: Mini Sudoku
+                                  - text: "#283"
+                              - generic [ref=e281]:
+                                - figure [ref=e282]
+                                - paragraph [ref=e284]: 3 connections played
+                            - generic "Solve" [ref=e285]:
+                              - link "Solve" [ref=e286]:
+                                - /url: /games/mini-sudoku/
+                                - generic [ref=e288]: Solve
+                    - listitem [ref=e289]:
+                      - 'link "Tango #591 3 connections played Solve" [ref=e291] [cursor=pointer]':
+                        - /url: https://www.linkedin.com/games/tango/
+                        - generic [ref=e293]:
+                          - figure [ref=e295]
+                          - generic [ref=e296]:
+                            - generic [ref=e297]:
+                              - paragraph [ref=e299]:
+                                - generic [ref=e300]:
+                                  - strong [ref=e301]: Tango
+                                  - text: "#591"
+                              - generic [ref=e302]:
+                                - figure [ref=e303]
+                                - paragraph [ref=e305]: 3 connections played
+                            - generic "Solve" [ref=e306]:
+                              - link "Solve" [ref=e307]:
+                                - /url: https://www.linkedin.com/games/tango/
+                                - generic [ref=e309]: Solve
+                    - listitem [ref=e310]:
+                      - 'link "Queens #751 10 connections played Solve" [ref=e312] [cursor=pointer]':
+                        - /url: https://www.linkedin.com/games/queens/
+                        - generic [ref=e314]:
+                          - figure [ref=e316]
+                          - generic [ref=e317]:
+                            - generic [ref=e318]:
+                              - paragraph [ref=e320]:
+                                - generic [ref=e321]:
+                                  - strong [ref=e322]: Queens
+                                  - text: "#751"
+                              - generic [ref=e323]:
+                                - figure [ref=e324]
+                                - paragraph [ref=e326]: 10 connections played
+                            - generic "Solve" [ref=e327]:
+                              - link "Solve" [ref=e328]:
+                                - /url: https://www.linkedin.com/games/queens/
+                                - generic [ref=e330]: Solve
+                    - listitem [ref=e331]:
+                      - 'link "Crossclimb #751 3 connections played Solve" [ref=e333] [cursor=pointer]':
+                        - /url: /games/crossclimb/
+                        - generic [ref=e335]:
+                          - figure [ref=e337]
+                          - generic [ref=e338]:
+                            - generic [ref=e339]:
+                              - paragraph [ref=e341]:
+                                - generic [ref=e342]:
+                                  - strong [ref=e343]: Crossclimb
+                                  - text: "#751"
+                              - generic [ref=e344]:
+                                - figure [ref=e345]
+                                - paragraph [ref=e347]: 3 connections played
+                            - generic "Solve" [ref=e348]:
+                              - link "Solve" [ref=e349]:
+                                - /url: /games/crossclimb/
+                                - generic [ref=e351]: Solve
+                    - listitem [ref=e352]:
+                      - 'link "Pinpoint #751 7 connections played Solve" [ref=e354] [cursor=pointer]':
+                        - /url: /games/pinpoint/
+                        - generic [ref=e356]:
+                          - figure [ref=e358]
+                          - generic [ref=e359]:
+                            - generic [ref=e360]:
+                              - paragraph [ref=e362]:
+                                - generic [ref=e363]:
+                                  - strong [ref=e364]: Pinpoint
+                                  - text: "#751"
+                              - generic [ref=e365]:
+                                - figure [ref=e366]
+                                - paragraph [ref=e368]: 7 connections played
+                            - generic "Solve" [ref=e369]:
+                              - link "Solve" [ref=e370]:
+                                - /url: /games/pinpoint/
+                                - generic [ref=e372]: Solve
+                    - listitem [ref=e373]:
+                      - 'link "Zip #430 🔥 3-day streak Results" [ref=e375] [cursor=pointer]':
+                        - /url: https://www.linkedin.com/games/zip/
+                        - generic [ref=e377]:
+                          - figure [ref=e379]
+                          - generic [ref=e380]:
+                            - generic [ref=e381]:
+                              - paragraph [ref=e383]:
+                                - generic [ref=e384]:
+                                  - strong [ref=e385]: Zip
+                                  - text: "#430"
+                              - paragraph [ref=e387]: 🔥 3-day streak
+                            - generic "Results" [ref=e388]:
+                              - link "Results" [ref=e389]:
+                                - /url: https://www.linkedin.com/games/zip/
+                                - generic [ref=e391]: Results
+                - generic [ref=e395]:
+                  - generic [ref=e396]:
+                    - generic [ref=e397]:
+                      - img "Premium" [ref=e398]
+                      - paragraph [ref=e403]: People who are hiring for your role
+                    - generic [ref=e404]:
+                      - button "Previous" [disabled] [ref=e405]:
+                        - generic:
+                          - img
+                      - button "Next" [ref=e406] [cursor=pointer]:
+                        - img [ref=e408]
+                      - button "Dismiss" [ref=e410] [cursor=pointer]:
+                        - img [ref=e412]
+                  - list [ref=e416]:
+                    - list [ref=e417]:
+                      - listitem [ref=e418]:
+                        - link "View profile" [ref=e419] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/mynetwork/grow/
+                          - generic "View profile" [ref=e420]:
+                            - generic [ref=e421]:
+                              - generic [ref=e422]:
+                                - figure [ref=e423]:
+                                  - img "Member blurred profile picture" [ref=e424]
+                                - generic [ref=e425]:
+                                  - paragraph [ref=e427]: LinkedIn Member
+                                  - paragraph [ref=e429]: HR Manager - Rawdata Technologies Pvt. Ltd.
+                              - link "View profile" [ref=e431]:
+                                - /url: https://www.linkedin.com/mynetwork/grow/
+                                - generic [ref=e433]: View profile
+                      - listitem [ref=e434]:
+                        - link "View profile" [ref=e435] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/mynetwork/grow/
+                          - generic "View profile" [ref=e436]:
+                            - generic [ref=e437]:
+                              - generic [ref=e438]:
+                                - figure [ref=e439]:
+                                  - img "Member blurred profile picture" [ref=e440]
+                                - generic [ref=e441]:
+                                  - paragraph [ref=e443]: LinkedIn Member
+                                  - paragraph [ref=e445]: Vice President & HR - Head at CloudKaptan Consultancy Services | Visit @ cloudkaptan.com/careers/ to look for the exciting opportunities
+                              - link "View profile" [ref=e447]:
+                                - /url: https://www.linkedin.com/mynetwork/grow/
+                                - generic [ref=e449]: View profile
+                      - listitem [ref=e450]:
+                        - link "View profile" [ref=e451] [cursor=pointer]:
+                          - /url: https://www.linkedin.com/mynetwork/grow/
+                          - generic "View profile" [ref=e452]:
+                            - generic [ref=e453]:
+                              - generic [ref=e454]:
+                                - figure [ref=e455]:
+                                  - img "Member blurred profile picture" [ref=e456]
+                                - generic [ref=e457]:
+                                  - paragraph [ref=e459]: LinkedIn Member
+                                  - paragraph [ref=e461]: Co-Founder @ Alphabin | Leading Quality Assurance Initiatives
+                              - link "View profile" [ref=e463]:
+                                - /url: https://www.linkedin.com/mynetwork/grow/
+                                - generic [ref=e465]: View profile
+                      - listitem [ref=e466]:
+                        - generic [ref=e470]:
+                          - generic [ref=e471]:
+                            - img "Member blurred profile picture" [ref=e472]
+                            - paragraph [ref=e477]: Unlock all with Premium
+                          - link "Try Premium for ₹0" [ref=e478] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Amy_network_actively_hiring_cohort_card%3AMy+Network%3AIn-Product&utype=job&referenceId=SZ3QVLKuSUmP39g76tKXhg%3D%3D&isSS=false&upsellSlotId=MY_NETWORK_ACTIVELY_HIRING_COHORT_CARD
+                            - generic [ref=e480]: Try Premium for ₹0
+                - generic [ref=e483]:
+                  - generic [ref=e485]:
+                    - heading "People you may know based on your recent activity" [level=3] [ref=e486]
+                    - link "Show all suggestions for People you may know based on your recent activity" [ref=e487] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/mynetwork/grow/
+                      - generic [ref=e489]: Show all
+                  - list [ref=e490]:
+                    - listitem [ref=e492]:
+                      - generic [ref=e493]:
+                        - generic [ref=e494]:
+                          - link "Tomer Gershon’s profile picture Tomer Gershon Verified QA Team Lead at Yad2 | Manual & Automation Testing | Test Strategy & Quality Leadership" [ref=e495] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/tomergershon/
+                            - generic [ref=e496]:
+                              - generic "Tomer Gershon’s profile picture" [ref=e497]:
+                                - figure [ref=e498]:
+                                  - img [ref=e499]
+                                - figure [ref=e505]:
+                                  - img "Tomer Gershon’s profile picture" [ref=e506]
+                              - generic [ref=e507]:
+                                - paragraph [ref=e509]:
+                                  - generic [ref=e510]:
+                                    - generic [ref=e511]:
+                                      - text: Tomer Gershon
+                                      - img "Verified" [ref=e512]
+                                    - generic [ref=e514]:
+                                      - text: Tomer Gershon
+                                      - img [ref=e516]
+                                - paragraph [ref=e519]: QA Team Lead at Yad2 | Manual & Automation Testing | Test Strategy & Quality Leadership
+                          - generic [ref=e520]:
+                            - generic [ref=e522]:
+                              - figure [ref=e523]
+                              - paragraph [ref=e525]: Nadav is a mutual connection
+                            - button "Invite Tomer Gershon to connect" [ref=e527] [cursor=pointer]:
+                              - generic [ref=e528]:
+                                - img [ref=e529]
+                                - generic [ref=e532]: Connect
+                        - button "Remove Tomer Gershon as a suggestion" [ref=e534] [cursor=pointer]:
+                          - img [ref=e536]
+                    - listitem [ref=e539]:
+                      - generic [ref=e540]:
+                        - generic [ref=e541]:
+                          - link "Aravind is open to work Aravind asvath Senior Full-Stack Developer | ReactJS | Node.js | Next.js | TypeScript | Angular | MongoDB | REST APIs" [ref=e542] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/aravind-asvath-1754488b/
+                            - generic [ref=e543]:
+                              - generic "Aravind is open to work" [ref=e544]:
+                                - figure [ref=e545]
+                                - figure [ref=e546]:
+                                  - img "Aravind is open to work" [ref=e547]
+                              - generic [ref=e548]:
+                                - paragraph [ref=e550]:
+                                  - generic [ref=e551]:
+                                    - generic [ref=e552]: Aravind asvath
+                                    - text: Aravind asvath
+                                - paragraph [ref=e554]: Senior Full-Stack Developer | ReactJS | Node.js | Next.js | TypeScript | Angular | MongoDB | REST APIs
+                          - generic [ref=e555]:
+                            - generic [ref=e557]:
+                              - figure [ref=e558]
+                              - paragraph [ref=e560]: Ajay and 3 other mutual connections
+                            - button "Invite Aravind asvath to connect" [ref=e562] [cursor=pointer]:
+                              - generic [ref=e563]:
+                                - img [ref=e564]
+                                - generic [ref=e567]: Connect
+                        - button "Remove Aravind asvath as a suggestion" [ref=e569] [cursor=pointer]:
+                          - img [ref=e571]
+                    - listitem [ref=e574]:
+                      - generic [ref=e575]:
+                        - generic [ref=e576]:
+                          - link "Yauheniya Sanko’s profile picture Yauheniya Sanko Verified QA Automation Test Engineer, SDET" [ref=e577] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/yauheniya-sanko/
+                            - generic [ref=e578]:
+                              - generic "Yauheniya Sanko’s profile picture" [ref=e579]:
+                                - figure [ref=e580]
+                                - figure [ref=e581]:
+                                  - img "Yauheniya Sanko’s profile picture" [ref=e582]
+                              - generic [ref=e583]:
+                                - paragraph [ref=e585]:
+                                  - generic [ref=e586]:
+                                    - generic [ref=e587]:
+                                      - text: Yauheniya Sanko
+                                      - img "Verified" [ref=e588]
+                                    - generic [ref=e590]:
+                                      - text: Yauheniya Sanko
+                                      - img [ref=e592]
+                                - paragraph [ref=e595]: QA Automation Test Engineer, SDET
+                          - generic [ref=e596]:
+                            - paragraph [ref=e599]: Based on your profile
+                            - button "Invite Yauheniya Sanko to connect" [ref=e601] [cursor=pointer]:
+                              - generic [ref=e602]:
+                                - img [ref=e603]
+                                - generic [ref=e606]: Connect
+                        - button "Remove Yauheniya Sanko as a suggestion" [ref=e608] [cursor=pointer]:
+                          - img [ref=e610]
+                    - listitem [ref=e613]:
+                      - generic [ref=e614]:
+                        - generic [ref=e615]:
+                          - link "Panadda M.’s profile picture Panadda M. Verified Senior QA Engineer" [ref=e616] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/panadda-m-8a6063196/
+                            - generic [ref=e617]:
+                              - generic "Panadda M.’s profile picture" [ref=e618]:
+                                - figure [ref=e619]
+                                - figure [ref=e620]:
+                                  - img "Panadda M.’s profile picture" [ref=e621]
+                              - generic [ref=e622]:
+                                - paragraph [ref=e624]:
+                                  - generic [ref=e625]:
+                                    - generic [ref=e626]:
+                                      - text: Panadda M.
+                                      - img "Verified" [ref=e627]
+                                    - generic [ref=e629]:
+                                      - text: Panadda M.
+                                      - img [ref=e631]
+                                - paragraph [ref=e634]: Senior QA Engineer
+                          - generic [ref=e635]:
+                            - paragraph [ref=e638]: Based on your profile
+                            - button "Invite Panadda M. to connect" [ref=e640] [cursor=pointer]:
+                              - generic [ref=e641]:
+                                - img [ref=e642]
+                                - generic [ref=e645]: Connect
+                        - button "Remove Panadda M. as a suggestion" [ref=e647] [cursor=pointer]:
+                          - img [ref=e649]
+                    - listitem [ref=e652]:
+                      - generic [ref=e653]:
+                        - generic [ref=e654]:
+                          - link "Anuja S’ profile picture Anuja S Software Tester | QA Analyst" [ref=e655] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/anuja-s-/
+                            - generic [ref=e656]:
+                              - generic "Anuja S’ profile picture" [ref=e657]:
+                                - figure [ref=e658]
+                                - figure [ref=e659]:
+                                  - img "Anuja S’ profile picture" [ref=e660]
+                              - generic [ref=e661]:
+                                - paragraph [ref=e663]:
+                                  - generic [ref=e664]:
+                                    - generic [ref=e665]: Anuja S
+                                    - text: Anuja S
+                                - paragraph [ref=e667]: Software Tester | QA Analyst
+                          - generic [ref=e668]:
+                            - generic [ref=e670]:
+                              - figure [ref=e671]
+                              - paragraph [ref=e673]: Calvin and 1 other mutual connection
+                            - button "Invite Anuja S to connect" [ref=e675] [cursor=pointer]:
+                              - generic [ref=e676]:
+                                - img [ref=e677]
+                                - generic [ref=e680]: Connect
+                        - button "Remove Anuja S as a suggestion" [ref=e682] [cursor=pointer]:
+                          - img [ref=e684]
+                    - listitem [ref=e687]:
+                      - generic [ref=e688]:
+                        - generic [ref=e689]:
+                          - link "NP ARAVIND’s profile picture NP ARAVIND Verified Software Engineer at Algoshack" [ref=e690] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/np-aravind-359426224/
+                            - generic [ref=e691]:
+                              - generic "NP ARAVIND’s profile picture" [ref=e692]:
+                                - figure [ref=e693]:
+                                  - img [ref=e694]
+                                - figure [ref=e700]:
+                                  - img "NP ARAVIND’s profile picture" [ref=e701]
+                              - generic [ref=e702]:
+                                - paragraph [ref=e704]:
+                                  - generic [ref=e705]:
+                                    - generic [ref=e706]:
+                                      - text: NP ARAVIND
+                                      - img "Verified" [ref=e707]
+                                    - generic [ref=e709]:
+                                      - text: NP ARAVIND
+                                      - img [ref=e711]
+                                - paragraph [ref=e714]: Software Engineer at Algoshack
+                          - generic [ref=e715]:
+                            - generic [ref=e717]:
+                              - figure [ref=e718]
+                              - paragraph [ref=e720]: Divyasri and 12 other mutual connections
+                            - button "Invite NP ARAVIND to connect" [ref=e722] [cursor=pointer]:
+                              - generic [ref=e723]:
+                                - img [ref=e724]
+                                - generic [ref=e727]: Connect
+                        - button "Remove NP ARAVIND as a suggestion" [ref=e729] [cursor=pointer]:
+                          - img [ref=e731]
+                    - listitem [ref=e734]:
+                      - generic [ref=e735]:
+                        - generic [ref=e736]:
+                          - link "sathya s’ profile picture sathya s Verified Operations Manager" [ref=e737] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/sathya-s-b79b01138/
+                            - generic [ref=e738]:
+                              - generic "sathya s’ profile picture" [ref=e739]:
+                                - figure [ref=e740]:
+                                  - img [ref=e741]
+                                - figure [ref=e747]:
+                                  - img "sathya s’ profile picture" [ref=e748]
+                              - generic [ref=e749]:
+                                - paragraph [ref=e751]:
+                                  - generic [ref=e752]:
+                                    - generic [ref=e753]:
+                                      - text: sathya s
+                                      - img "Verified" [ref=e754]
+                                    - generic [ref=e756]:
+                                      - text: sathya s
+                                      - img [ref=e758]
+                                - paragraph [ref=e761]: Operations Manager
+                          - generic [ref=e762]:
+                            - generic [ref=e764]:
+                              - figure [ref=e765]
+                              - paragraph [ref=e767]: Novastrid
+                            - button "Invite sathya s to connect" [ref=e769] [cursor=pointer]:
+                              - generic [ref=e770]:
+                                - img [ref=e771]
+                                - generic [ref=e774]: Connect
+                        - button "Remove sathya s as a suggestion" [ref=e776] [cursor=pointer]:
+                          - img [ref=e778]
+                    - listitem [ref=e781]:
+                      - generic [ref=e782]:
+                        - generic [ref=e783]:
+                          - link "Sumaiya L’s profile picture Sumaiya L Human Resource Recruiter | Sourcing | Screening | Interview Coordination | Building Strong Teams" [ref=e784] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/sumaiya-l-79089425a/
+                            - generic [ref=e785]:
+                              - generic "Sumaiya L’s profile picture" [ref=e786]:
+                                - figure [ref=e787]
+                                - figure [ref=e788]:
+                                  - img "Sumaiya L’s profile picture" [ref=e789]
+                              - generic [ref=e790]:
+                                - paragraph [ref=e792]:
+                                  - generic [ref=e793]:
+                                    - generic [ref=e794]: Sumaiya L
+                                    - text: Sumaiya L
+                                - paragraph [ref=e796]: Human Resource Recruiter | Sourcing | Screening | Interview Coordination | Building Strong Teams
+                          - generic [ref=e797]:
+                            - generic [ref=e799]:
+                              - figure [ref=e800]
+                              - paragraph [ref=e802]: Sundara is a mutual connection
+                            - button "Invite Sumaiya L to connect" [ref=e804] [cursor=pointer]:
+                              - generic [ref=e805]:
+                                - img [ref=e806]
+                                - generic [ref=e809]: Connect
+                        - button "Remove Sumaiya L as a suggestion" [ref=e811] [cursor=pointer]:
+                          - img [ref=e813]
+                - generic [ref=e817]:
+                  - generic [ref=e819]:
+                    - heading "People you may know from KLN College of Engineering, Madurai, India" [level=3] [ref=e820]
+                    - link "Show all suggestions for People you may know from KLN College of Engineering, Madurai, India" [ref=e821] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/mynetwork/grow/
+                      - generic [ref=e823]: Show all
+                  - list [ref=e824]:
+                    - listitem [ref=e826]:
+                      - generic [ref=e827]:
+                        - generic [ref=e828]:
+                          - link "Sanjay S’ profile picture Sanjay S Software Performance Engineer | Apache JMeter | K6 | Grafana Monitoring | Jenkins CI/CD | APM Tracing | Docker | PACS & DICOM Healthcare Systems" [ref=e829] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/sanjay-s-ab1350218/
+                            - generic [ref=e830]:
+                              - generic "Sanjay S’ profile picture" [ref=e831]:
+                                - figure [ref=e832]:
+                                  - img [ref=e833]
+                                - figure [ref=e839]:
+                                  - img "Sanjay S’ profile picture" [ref=e840]
+                              - generic [ref=e841]:
+                                - paragraph [ref=e843]:
+                                  - generic [ref=e844]:
+                                    - generic [ref=e845]: Sanjay S
+                                    - text: Sanjay S
+                                - paragraph [ref=e847]: Software Performance Engineer | Apache JMeter | K6 | Grafana Monitoring | Jenkins CI/CD | APM Tracing | Docker | PACS & DICOM Healthcare Systems
+                          - generic [ref=e848]:
+                            - generic [ref=e850]:
+                              - figure [ref=e851]
+                              - paragraph [ref=e853]: Ranjith and 7 other mutual connections
+                            - button "Invite Sanjay S to connect" [ref=e855] [cursor=pointer]:
+                              - generic [ref=e856]:
+                                - img [ref=e857]
+                                - generic [ref=e860]: Connect
+                        - button "Remove Sanjay S as a suggestion" [ref=e862] [cursor=pointer]:
+                          - img [ref=e864]
+                    - listitem [ref=e867]:
+                      - generic [ref=e868]:
+                        - generic [ref=e869]:
+                          - link "Nithya is open to work Nithya Priya Digital Marketing Intern | UX/UI Designer / Graphic Designer | Social media content creation Madurai, TamilNadu , India" [ref=e870] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/nithya-priya-b31772284/
+                            - generic [ref=e871]:
+                              - generic "Nithya is open to work" [ref=e872]:
+                                - figure [ref=e873]
+                                - figure [ref=e874]:
+                                  - img "Nithya is open to work" [ref=e875]
+                              - generic [ref=e876]:
+                                - paragraph [ref=e878]:
+                                  - generic [ref=e879]:
+                                    - generic [ref=e880]: Nithya Priya
+                                    - text: Nithya Priya
+                                - paragraph [ref=e882]: Digital Marketing Intern | UX/UI Designer / Graphic Designer | Social media content creation Madurai, TamilNadu , India
+                          - generic [ref=e883]:
+                            - generic [ref=e885]:
+                              - figure [ref=e886]
+                              - paragraph [ref=e888]: Vishnu and 2 other mutual connections
+                            - button "Invite Nithya Priya to connect" [ref=e890] [cursor=pointer]:
+                              - generic [ref=e891]:
+                                - img [ref=e892]
+                                - generic [ref=e895]: Connect
+                        - button "Remove Nithya Priya as a suggestion" [ref=e897] [cursor=pointer]:
+                          - img [ref=e899]
+                    - listitem [ref=e902]:
+                      - generic [ref=e903]:
+                        - generic [ref=e904]:
+                          - link "Dhamodharan Sathuragiri’s profile picture Dhamodharan Sathuragiri Verified BIM-Trainee engineer at pinnacle infotech solution" [ref=e905] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dhamodharn2004/
+                            - generic [ref=e906]:
+                              - generic "Dhamodharan Sathuragiri’s profile picture" [ref=e907]:
+                                - figure [ref=e908]:
+                                  - img [ref=e909]
+                                - figure [ref=e915]:
+                                  - img "Dhamodharan Sathuragiri’s profile picture" [ref=e916]
+                              - generic [ref=e917]:
+                                - paragraph [ref=e919]:
+                                  - generic [ref=e920]:
+                                    - generic [ref=e921]:
+                                      - text: Dhamodharan Sathuragiri
+                                      - img "Verified" [ref=e922]
+                                    - generic [ref=e924]:
+                                      - text: Dhamodharan Sathuragiri
+                                      - img [ref=e926]
+                                - paragraph [ref=e929]: BIM-Trainee engineer at pinnacle infotech solution
+                          - generic [ref=e930]:
+                            - generic [ref=e932]:
+                              - figure [ref=e933]
+                              - paragraph [ref=e935]: Premnath and 13 other mutual connections
+                            - button "Invite Dhamodharan Sathuragiri to connect" [ref=e937] [cursor=pointer]:
+                              - generic [ref=e938]:
+                                - img [ref=e939]
+                                - generic [ref=e942]: Connect
+                        - button "Remove Dhamodharan Sathuragiri as a suggestion" [ref=e944] [cursor=pointer]:
+                          - img [ref=e946]
+                    - listitem [ref=e949]:
+                      - generic [ref=e950]:
+                        - generic [ref=e951]:
+                          - link "Harish kumar Senthil’s profile picture Harish kumar Senthil Verified Information security Analyst | CEH | XSIAM | SOAR | SIEM | UEBA" [ref=e952] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/harish-kumar-senthil-284510205/
+                            - generic [ref=e953]:
+                              - generic "Harish kumar Senthil’s profile picture" [ref=e954]:
+                                - figure [ref=e955]
+                                - figure [ref=e956]:
+                                  - img "Harish kumar Senthil’s profile picture" [ref=e957]
+                              - generic [ref=e958]:
+                                - paragraph [ref=e960]:
+                                  - generic [ref=e961]:
+                                    - generic [ref=e962]:
+                                      - text: Harish kumar Senthil
+                                      - img "Verified" [ref=e963]
+                                    - generic [ref=e965]:
+                                      - text: Harish kumar Senthil
+                                      - img [ref=e967]
+                                - paragraph [ref=e970]: Information security Analyst | CEH | XSIAM | SOAR | SIEM | UEBA
+                          - generic [ref=e971]:
+                            - generic [ref=e973]:
+                              - figure [ref=e974]
+                              - paragraph [ref=e976]: Santhose and 23 other mutual connections
+                            - button "Invite Harish kumar Senthil to connect" [ref=e978] [cursor=pointer]:
+                              - generic [ref=e979]:
+                                - img [ref=e980]
+                                - generic [ref=e983]: Connect
+                        - button "Remove Harish kumar Senthil as a suggestion" [ref=e985] [cursor=pointer]:
+                          - img [ref=e987]
+                    - listitem [ref=e990]:
+                      - generic [ref=e991]:
+                        - generic [ref=e992]:
+                          - link "Dharshini M’s profile picture Dharshini M Verified Attended KLN College of Engineering, Madurai, India" [ref=e993] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/dharshini-m-6409a12a1/
+                            - generic [ref=e994]:
+                              - generic "Dharshini M’s profile picture" [ref=e995]:
+                                - figure [ref=e996]
+                                - figure [ref=e997]:
+                                  - img "Dharshini M’s profile picture" [ref=e998]
+                              - generic [ref=e999]:
+                                - paragraph [ref=e1001]:
+                                  - generic [ref=e1002]:
+                                    - generic [ref=e1003]:
+                                      - text: Dharshini M
+                                      - img "Verified" [ref=e1004]
+                                    - generic [ref=e1006]:
+                                      - text: Dharshini M
+                                      - img [ref=e1008]
+                                - paragraph [ref=e1011]: Attended KLN College of Engineering, Madurai, India
+                          - generic [ref=e1012]:
+                            - generic [ref=e1014]:
+                              - figure [ref=e1015]
+                              - paragraph [ref=e1017]: Thanga and 6 other mutual connections
+                            - button "Invite Dharshini M to connect" [ref=e1019] [cursor=pointer]:
+                              - generic [ref=e1020]:
+                                - img [ref=e1021]
+                                - generic [ref=e1024]: Connect
+                        - button "Remove Dharshini M as a suggestion" [ref=e1026] [cursor=pointer]:
+                          - img [ref=e1028]
+                    - listitem [ref=e1031]:
+                      - generic [ref=e1032]:
+                        - generic [ref=e1033]:
+                          - link "monisha shree’s profile picture monisha shree Business Analyst at Relevantz" [ref=e1034] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/monisha-shree-465a03300/
+                            - generic [ref=e1035]:
+                              - generic "monisha shree’s profile picture" [ref=e1036]:
+                                - figure [ref=e1037]:
+                                  - img [ref=e1038]
+                                - figure [ref=e1044]:
+                                  - img "monisha shree’s profile picture" [ref=e1045]
+                              - generic [ref=e1046]:
+                                - paragraph [ref=e1048]:
+                                  - generic [ref=e1049]:
+                                    - generic [ref=e1050]: monisha shree
+                                    - text: monisha shree
+                                - paragraph [ref=e1052]: Business Analyst at Relevantz
+                          - generic [ref=e1053]:
+                            - generic [ref=e1055]:
+                              - figure [ref=e1056]
+                              - paragraph [ref=e1058]: Ambigai and 20 other mutual connections
+                            - button "Invite monisha shree to connect" [ref=e1060] [cursor=pointer]:
+                              - generic [ref=e1061]:
+                                - img [ref=e1062]
+                                - generic [ref=e1065]: Connect
+                        - button "Remove monisha shree as a suggestion" [ref=e1067] [cursor=pointer]:
+                          - img [ref=e1069]
+                    - listitem [ref=e1072]:
+                      - generic [ref=e1073]:
+                        - generic [ref=e1074]:
+                          - link "Vasu Devan J’s profile picture Vasu Devan J Verified ABB 800xA // Pharma batch automation (ISA S88 Batch) // Oil & Gas // Process automation // Commissioning // HMI developer // GAMP" [ref=e1075] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/vasu-devan-j-618635218/
+                            - generic [ref=e1076]:
+                              - generic "Vasu Devan J’s profile picture" [ref=e1077]:
+                                - figure [ref=e1078]
+                                - figure [ref=e1079]:
+                                  - img "Vasu Devan J’s profile picture" [ref=e1080]
+                              - generic [ref=e1081]:
+                                - paragraph [ref=e1083]:
+                                  - generic [ref=e1084]:
+                                    - generic [ref=e1085]:
+                                      - text: Vasu Devan J
+                                      - img "Verified" [ref=e1086]
+                                    - generic [ref=e1088]:
+                                      - text: Vasu Devan J
+                                      - img [ref=e1090]
+                                - paragraph [ref=e1093]: ABB 800xA // Pharma batch automation (ISA S88 Batch) // Oil & Gas // Process automation // Commissioning // HMI developer // GAMP
+                          - generic [ref=e1094]:
+                            - generic [ref=e1096]:
+                              - figure [ref=e1097]
+                              - paragraph [ref=e1099]: Aravintharaj and 38 other mutual connections
+                            - button "Invite Vasu Devan J to connect" [ref=e1101] [cursor=pointer]:
+                              - generic [ref=e1102]:
+                                - img [ref=e1103]
+                                - generic [ref=e1106]: Connect
+                        - button "Remove Vasu Devan J as a suggestion" [ref=e1108] [cursor=pointer]:
+                          - img [ref=e1110]
+                    - listitem [ref=e1113]:
+                      - generic [ref=e1114]:
+                        - generic [ref=e1115]:
+                          - link "Preethi T V’s profile picture Preethi T V Verified pre-final year | HTML | CSS | PYTHON | C | seeking for internship" [ref=e1116] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/preethi-t-v-7382362a2/
+                            - generic [ref=e1117]:
+                              - generic "Preethi T V’s profile picture" [ref=e1118]:
+                                - figure [ref=e1119]
+                                - figure [ref=e1120]:
+                                  - img "Preethi T V’s profile picture" [ref=e1121]
+                              - generic [ref=e1122]:
+                                - paragraph [ref=e1124]:
+                                  - generic [ref=e1125]:
+                                    - generic [ref=e1126]:
+                                      - text: Preethi T V
+                                      - img "Verified" [ref=e1127]
+                                    - generic [ref=e1129]:
+                                      - text: Preethi T V
+                                      - img [ref=e1131]
+                                - paragraph [ref=e1134]: pre-final year | HTML | CSS | PYTHON | C | seeking for internship
+                          - generic [ref=e1135]:
+                            - generic [ref=e1137]:
+                              - figure [ref=e1138]
+                              - paragraph [ref=e1140]: Sundara and 8 other mutual connections
+                            - button "Invite Preethi T V to connect" [ref=e1142] [cursor=pointer]:
+                              - generic [ref=e1143]:
+                                - img [ref=e1144]
+                                - generic [ref=e1147]: Connect
+                        - button "Remove Preethi T V as a suggestion" [ref=e1149] [cursor=pointer]:
+                          - img [ref=e1151]
+                - generic [ref=e1155]:
+                  - heading "Suggestions for you" [level=2] [ref=e1156]
+                  - list [ref=e1157]:
+                    - listitem [ref=e1159]:
+                      - generic [ref=e1160]:
+                        - generic [ref=e1161]:
+                          - link "Saidha Shirin M’s profile picture Saidha Shirin M Graduate Trainee @ HCLTech | Troubleshooting & Remote User Support" [ref=e1162] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/saidha-shirin-m-468467253/
+                            - generic [ref=e1163]:
+                              - generic "Saidha Shirin M’s profile picture" [ref=e1164]:
+                                - figure [ref=e1165]
+                                - figure [ref=e1166]:
+                                  - img "Saidha Shirin M’s profile picture" [ref=e1167]
+                              - generic [ref=e1168]:
+                                - paragraph [ref=e1170]:
+                                  - generic [ref=e1171]:
+                                    - generic [ref=e1172]: Saidha Shirin M
+                                    - text: Saidha Shirin M
+                                - paragraph [ref=e1174]: Graduate Trainee @ HCLTech | Troubleshooting & Remote User Support
+                          - generic [ref=e1175]:
+                            - generic [ref=e1177]:
+                              - figure [ref=e1178]
+                              - paragraph [ref=e1180]: Mohamed and 2 other mutual connections
+                            - button "Invite Saidha Shirin M to connect" [ref=e1182] [cursor=pointer]:
+                              - generic [ref=e1183]:
+                                - img [ref=e1184]
+                                - generic [ref=e1187]: Connect
+                        - button "Remove Saidha Shirin M as a suggestion" [ref=e1189] [cursor=pointer]:
+                          - img [ref=e1191]
+                    - listitem [ref=e1194]:
+                      - generic [ref=e1195]:
+                        - generic [ref=e1196]:
+                          - link "Raajguru RS’ profile picture Raajguru RS Quality Assurance Manager at National Payments Corporation Of India (NPCI)" [ref=e1197] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/raajguru-rs-68286a406/
+                            - generic [ref=e1198]:
+                              - generic "Raajguru RS’ profile picture" [ref=e1199]:
+                                - figure [ref=e1200]:
+                                  - img [ref=e1201]
+                                - figure [ref=e1207]:
+                                  - img "Raajguru RS’ profile picture" [ref=e1208]
+                              - generic [ref=e1209]:
+                                - paragraph [ref=e1211]:
+                                  - generic [ref=e1212]:
+                                    - generic [ref=e1213]: Raajguru RS
+                                    - text: Raajguru RS
+                                - paragraph [ref=e1215]: Quality Assurance Manager at National Payments Corporation Of India (NPCI)
+                          - generic [ref=e1216]:
+                            - paragraph [ref=e1219]: Based on your profile
+                            - button "Invite Raajguru RS to connect" [ref=e1221] [cursor=pointer]:
+                              - generic [ref=e1222]:
+                                - img [ref=e1223]
+                                - generic [ref=e1226]: Connect
+                        - button "Remove Raajguru RS as a suggestion" [ref=e1228] [cursor=pointer]:
+                          - img [ref=e1230]
+                    - listitem [ref=e1233]:
+                      - generic [ref=e1234]:
+                        - generic [ref=e1235]:
+                          - link "Kesavamurthi M’s profile picture Kesavamurthi M Verified Software Developer Java | Spring Boot | Hibernate MySQL" [ref=e1236] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/kesavamurthi-m/
+                            - generic [ref=e1237]:
+                              - generic "Kesavamurthi M’s profile picture" [ref=e1238]:
+                                - figure [ref=e1239]
+                                - figure [ref=e1240]:
+                                  - img "Kesavamurthi M’s profile picture" [ref=e1241]
+                              - generic [ref=e1242]:
+                                - paragraph [ref=e1244]:
+                                  - generic [ref=e1245]:
+                                    - generic [ref=e1246]:
+                                      - text: Kesavamurthi M
+                                      - img "Verified" [ref=e1247]
+                                    - generic [ref=e1249]:
+                                      - text: Kesavamurthi M
+                                      - img [ref=e1251]
+                                - paragraph [ref=e1254]: Software Developer Java | Spring Boot | Hibernate MySQL
+                          - generic [ref=e1255]:
+                            - generic [ref=e1257]:
+                              - figure [ref=e1258]
+                              - paragraph [ref=e1260]: Sundara and 9 other mutual connections
+                            - button "Invite Kesavamurthi M to connect" [ref=e1262] [cursor=pointer]:
+                              - generic [ref=e1263]:
+                                - img [ref=e1264]
+                                - generic [ref=e1267]: Connect
+                        - button "Remove Kesavamurthi M as a suggestion" [ref=e1269] [cursor=pointer]:
+                          - img [ref=e1271]
+                    - listitem [ref=e1274]:
+                      - generic [ref=e1275]:
+                        - generic [ref=e1276]:
+                          - link "Raju Saini’s profile picture Raju Saini Quality Assurance Engineer at SHREE MADHAV AGENCIES PRIVATE LIMITED" [ref=e1277] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/raju-saini-93959340a/
+                            - generic [ref=e1278]:
+                              - generic "Raju Saini’s profile picture" [ref=e1279]:
+                                - figure [ref=e1280]:
+                                  - img [ref=e1281]
+                                - figure [ref=e1287]:
+                                  - img "Raju Saini’s profile picture" [ref=e1288]
+                              - generic [ref=e1294]:
+                                - paragraph [ref=e1296]:
+                                  - generic [ref=e1297]:
+                                    - generic [ref=e1298]: Raju Saini
+                                    - text: Raju Saini
+                                - paragraph [ref=e1300]: Quality Assurance Engineer at SHREE MADHAV AGENCIES PRIVATE LIMITED
+                          - generic [ref=e1301]:
+                            - paragraph [ref=e1304]: Based on your profile
+                            - button "Invite Raju Saini to connect" [ref=e1306] [cursor=pointer]:
+                              - generic [ref=e1307]:
+                                - img [ref=e1308]
+                                - generic [ref=e1311]: Connect
+                        - button "Remove Raju Saini as a suggestion" [ref=e1313] [cursor=pointer]:
+                          - img [ref=e1315]
+                    - listitem [ref=e1318]:
+                      - generic [ref=e1319]:
+                        - generic [ref=e1320]:
+                          - link "Malar Velram’s profile picture Malar Velram Verified Senior Technical Writer | ERP & SaaS Documentation | Microsoft Dynamics 365 Business Central | Docs-as-Code | AI-Enabled Content & Knowledge Systems" [ref=e1321] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/malar-velram-1044232a/
+                            - generic [ref=e1322]:
+                              - generic "Malar Velram’s profile picture" [ref=e1323]:
+                                - figure [ref=e1324]:
+                                  - img [ref=e1325]
+                                - figure [ref=e1331]:
+                                  - img "Malar Velram’s profile picture" [ref=e1332]
+                              - generic [ref=e1333]:
+                                - paragraph [ref=e1335]:
+                                  - generic [ref=e1336]:
+                                    - generic [ref=e1337]:
+                                      - text: Malar Velram
+                                      - img "Verified" [ref=e1338]
+                                    - generic [ref=e1340]:
+                                      - text: Malar Velram
+                                      - img [ref=e1342]
+                                - paragraph [ref=e1345]: Senior Technical Writer | ERP & SaaS Documentation | Microsoft Dynamics 365 Business Central | Docs-as-Code | AI-Enabled Content & Knowledge Systems
+                          - generic [ref=e1346]:
+                            - generic [ref=e1348]:
+                              - figure [ref=e1349]
+                              - paragraph [ref=e1351]: Bathri and 5 other mutual connections
+                            - button "Invite Malar Velram to connect" [ref=e1353] [cursor=pointer]:
+                              - generic [ref=e1354]:
+                                - img [ref=e1355]
+                                - generic [ref=e1358]: Connect
+                        - button "Remove Malar Velram as a suggestion" [ref=e1360] [cursor=pointer]:
+                          - img [ref=e1362]
+                    - listitem [ref=e1365]:
+                      - generic [ref=e1366]:
+                        - generic [ref=e1367]:
+                          - link "Gowtham A’s profile picture Gowtham A Software Engineer in Test at CodiFi" [ref=e1368] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/gowtham-a-010750408/
+                            - generic [ref=e1369]:
+                              - generic "Gowtham A’s profile picture" [ref=e1370]:
+                                - figure [ref=e1371]:
+                                  - img [ref=e1372]
+                                - figure [ref=e1378]:
+                                  - img "Gowtham A’s profile picture" [ref=e1379]
+                              - generic [ref=e1380]:
+                                - paragraph [ref=e1382]:
+                                  - generic [ref=e1383]:
+                                    - generic [ref=e1384]: Gowtham A
+                                    - text: Gowtham A
+                                - paragraph [ref=e1386]: Software Engineer in Test at CodiFi
+                          - generic [ref=e1387]:
+                            - paragraph [ref=e1390]: Based on your profile
+                            - button "Invite Gowtham A to connect" [ref=e1392] [cursor=pointer]:
+                              - generic [ref=e1393]:
+                                - img [ref=e1394]
+                                - generic [ref=e1397]: Connect
+                        - button "Remove Gowtham A as a suggestion" [ref=e1399] [cursor=pointer]:
+                          - img [ref=e1401]
+                    - listitem [ref=e1404]:
+                      - generic [ref=e1405]:
+                        - generic [ref=e1406]:
+                          - link "Mani Suresh’s profile picture Mani Suresh Verified Software Tester | Skilled in Game Testing | Knowledge of ISTQB Concepts" [ref=e1407] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/manisuresh2810/
+                            - generic [ref=e1408]:
+                              - generic "Mani Suresh’s profile picture" [ref=e1409]:
+                                - figure [ref=e1410]
+                                - figure [ref=e1411]:
+                                  - img "Mani Suresh’s profile picture" [ref=e1412]
+                              - generic [ref=e1413]:
+                                - paragraph [ref=e1415]:
+                                  - generic [ref=e1416]:
+                                    - generic [ref=e1417]:
+                                      - text: Mani Suresh
+                                      - img "Verified" [ref=e1418]
+                                    - generic [ref=e1420]:
+                                      - text: Mani Suresh
+                                      - img [ref=e1422]
+                                - paragraph [ref=e1425]: Software Tester | Skilled in Game Testing | Knowledge of ISTQB Concepts
+                          - generic [ref=e1426]:
+                            - generic [ref=e1428]:
+                              - figure [ref=e1429]
+                              - paragraph [ref=e1431]: Aditya is a mutual connection
+                            - button "Invite Mani Suresh to connect" [ref=e1433] [cursor=pointer]:
+                              - generic [ref=e1434]:
+                                - img [ref=e1435]
+                                - generic [ref=e1438]: Connect
+                        - button "Remove Mani Suresh as a suggestion" [ref=e1440] [cursor=pointer]:
+                          - img [ref=e1442]
+                    - listitem [ref=e1445]:
+                      - generic [ref=e1446]:
+                        - generic [ref=e1447]:
+                          - link "David Gomes’ profile picture David Gomes Verified AI Quality Analyst | Testo modelos de linguagem em tempo real" [ref=e1448] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/david-gomes-894859407/
+                            - generic [ref=e1449]:
+                              - generic "David Gomes’ profile picture" [ref=e1450]:
+                                - figure [ref=e1451]
+                                - figure [ref=e1452]:
+                                  - img "David Gomes’ profile picture" [ref=e1453]
+                              - generic [ref=e1454]:
+                                - paragraph [ref=e1456]:
+                                  - generic [ref=e1457]:
+                                    - generic [ref=e1458]:
+                                      - text: David Gomes
+                                      - img "Verified" [ref=e1459]
+                                    - generic [ref=e1461]:
+                                      - text: David Gomes
+                                      - img [ref=e1463]
+                                - paragraph [ref=e1466]: AI Quality Analyst | Testo modelos de linguagem em tempo real
+                          - generic [ref=e1467]:
+                            - paragraph [ref=e1470]: Based on your profile
+                            - button "Invite David Gomes to connect" [ref=e1472] [cursor=pointer]:
+                              - generic [ref=e1473]:
+                                - img [ref=e1474]
+                                - generic [ref=e1477]: Connect
+                        - button "Remove David Gomes as a suggestion" [ref=e1479] [cursor=pointer]:
+                          - img [ref=e1481]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - complementary:
+            - generic [ref=e1484]:
+              - generic [ref=e1486] [cursor=pointer]:
+                - generic [ref=e1487]:
+                  - img "Gowtham Rathinasamy" [ref=e1488]
+                  - generic [ref=e1490]: Status is online
+                - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e1491]:
+                  - generic [ref=e1492]:
+                    - generic [ref=e1493]: Messaging
+                    - generic [ref=e1494]: You are on the messaging overlay. Press enter to open the list of conversations.
+              - generic [ref=e1495]:
+                - button "Open messenger dropdown menu" [ref=e1497] [cursor=pointer]:
+                  - img "Open messenger dropdown menu" [ref=e1498]
+                - button "Compose message" [ref=e1501] [cursor=pointer]:
+                  - img [ref=e1502]
+                  - generic [ref=e1504]: Compose message
+                - button "You are on the messaging overlay. Press enter to open the list of conversations." [ref=e1505] [cursor=pointer]:
+                  - img [ref=e1506]
+                  - generic [ref=e1508]: You are on the messaging overlay. Press enter to open the list of conversations.
+          - complementary "AI-powered assistant to get help with your career, jobs etc"
+  - iframe [ref=e1509]:
+    - generic [active] [ref=f17e1]:
+      - generic:
+        - region "Toast message":
+          - heading "0 notifications total" [level=2] [ref=f17e3]
+          - alert
+      - region [ref=f17e4]
+      - generic [ref=f17e5]:
+        - generic [ref=f17e7]:
+          - button "Skip to search" [ref=f17e8] [cursor=pointer]:
+            - generic [ref=f17e9]: Skip to search
+          - button "Skip to main content" [ref=f17e10] [cursor=pointer]:
+            - generic [ref=f17e11]: Skip to main content
+          - button "Keyboard shortcuts" [ref=f17e12] [cursor=pointer]:
+            - generic [ref=f17e13]: Keyboard shortcuts
+          - button "Close jump menu" [ref=f17e14] [cursor=pointer]:
+            - img [ref=f17e15]
+            - generic [ref=f17e17]: Close jump menu
+        - banner "Global Navigation" [ref=f17e18]:
+          - generic [ref=f17e19]:
+            - link "LinkedIn" [ref=f17e20] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/?nis=true
+              - img "LinkedIn" [ref=f17e23]:
+                - img [ref=f17e24]
+            - generic [ref=f17e28]:
+              - combobox "Search" [ref=f17e29]
+              - generic:
+                - img
+            - navigation "Primary Navigation" [ref=f17e30]:
+              - list [ref=f17e31]:
+                - listitem [ref=f17e32]:
+                  - link "new feed updates notifications Home" [ref=f17e33] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/feed/
+                    - generic [ref=f17e34]:
+                      - generic [ref=f17e37]: new feed updates notifications
+                      - img [ref=f17e41]
+                    - generic "Home" [ref=f17e43]
+                - listitem [ref=f17e44]:
+                  - link "My Network" [ref=f17e45] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/mynetwork/?
+                    - img [ref=f17e49]
+                    - generic "My Network" [ref=f17e51]
+                - listitem [ref=f17e52]:
+                  - link "Jobs" [ref=f17e53] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/jobs/?
+                    - img [ref=f17e57]
+                    - generic "Jobs" [ref=f17e59]
+                - listitem [ref=f17e60]:
+                  - link "Messaging" [ref=f17e61] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/messaging/?
+                    - img [ref=f17e65]
+                    - generic "Messaging" [ref=f17e67]
+                - listitem [ref=f17e68]:
+                  - link "Notifications" [ref=f17e69] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/notifications/?
+                    - img [ref=f17e73]
+                    - generic "Notifications" [ref=f17e75]
+                - listitem [ref=f17e76]:
+                  - button "Gowtham Rathinasamy Me" [ref=f17e78] [cursor=pointer]:
+                    - img "Gowtham Rathinasamy" [ref=f17e79]
+                    - generic [ref=f17e80]:
+                      - text: Me
+                      - img [ref=f17e81]
+                - listitem [ref=f17e83]:
+                  - button "For Business" [ref=f17e85] [cursor=pointer]:
+                    - img [ref=f17e89]
+                    - generic "For Business" [ref=f17e91]:
+                      - text: For Business
+                      - img [ref=f17e92]
+                - listitem [ref=f17e94]:
+                  - link "Post a job" [ref=f17e95] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/talent/job-posting-redirect?trk=nav_spotlight_post_job&
+                    - img [ref=f17e99]
+                    - generic "Post a job" [ref=f17e104]
+```
+
+# Test source
+
+```ts
+  1  | import { test } from '@playwright/test';
+  2  | 
+  3  | const LOGIN_URL = 'https://www.linkedin.com/login';
+  4  | const NETWORK_URL = 'https://www.linkedin.com/mynetwork/grow/';
+  5  | 
+  6  | test('send connection requests safely', async ({ page }) => {
+  7  |   await page.goto(LOGIN_URL);
+  8  | 
+  9  |   await page.locator('input[type="email"]').fill(process.env.LINKEDIN_USERNAME);
+  10 |   await page.locator('input[type="password"]').fill(process.env.LINKEDIN_PASSWORD);
+  11 | 
+  12 |   await page.locator('button[type="submit"]').click();
+  13 |   await page.waitForNavigation();
+  14 | 
+  15 |   await page.goto(NETWORK_URL);
+> 16 |   await page.waitForLoadState('networkidle');
+     |              ^ Error: page.waitForLoadState: Test timeout of 50000ms exceeded.
+  17 | 
+  18 |   let clicked = 0;
+  19 | 
+  20 |   while (clicked < 50) {
+  21 |     const buttons = page.locator('button:has-text("Connect")');
+  22 | 
+  23 |     const count = await buttons.count();
+  24 |     if (count === 0) break;
+  25 | 
+  26 |     for (let i = 0; i < count && clicked < 50; i++) {
+  27 |       const btn = buttons.nth(i);
+  28 | 
+  29 |       try {
+  30 |         if (await btn.isVisible()) {
+  31 |           await btn.click({ timeout: 2000 });
+  32 |           clicked++;
+  33 |           console.log(`Clicked ${clicked}`);
+  34 | 
+  35 |           // handle popup if it appears
+  36 |           const send = page.locator('button:has-text("Send")');
+  37 |           if (await send.isVisible().catch(() => false)) {
+  38 |             await send.click().catch(() => {});
+  39 |           }
+  40 | 
+  41 |           await page.waitForTimeout(1000);
+  42 |         }
+  43 |       } catch (e) {
+  44 |         console.log('Skipped one button');
+  45 |       }
+  46 |     }
+  47 | 
+  48 |     await page.mouse.wheel(0, 2000);
+  49 |     await page.waitForTimeout(2000);
+  50 |   }
+  51 | 
+  52 |   console.log(`Total sent: ${clicked}`);
+  53 | });
+```
