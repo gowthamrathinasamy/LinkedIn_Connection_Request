@@ -14,18 +14,10 @@ const passwordInput = page.locator('input[type="password"]');
   
 
   await page.goto(LINKEDIN_SEARCH_URL);
-  const connectButton = page.getByRole('button', { name: /to connect/i });
-  const connectButtonCount = await connectButton.count();
-
-  for (let i = 0; i < connectButtonCount; i++) {
-    const button = connectButton.nth(i);
-    if (await button.isEnabled()) {
-      await button.click();
-      console.log(`Connect button ${i + 1} Clicked`);
-    } else {
-      console.log(`Connect button ${i + 1} is not clickable`);
-    }
-  } 
+  const connectButton = page.getByRole('button', { name: /to connect/i }).first() ;
+await connectButton.click();
+await page.pause();
+ 
   
   
 });
