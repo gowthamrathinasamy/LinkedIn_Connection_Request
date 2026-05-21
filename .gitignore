@@ -1,2 +1,4 @@
 cookies.json
 .env
+playwright-report/
+test-results/
