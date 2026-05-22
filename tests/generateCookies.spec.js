@@ -12,7 +12,7 @@ test('send LinkedIn connection requests in batches of 50 per page', async ({ pag
   await passwordInput.fill(process.env.LINKEDIN_PASSWORD);
   await page.locator('button[type="submit"]').click();
   const cookies = await context.cookies();
+
   fs.writeFileSync('cookies.json', JSON.stringify(cookies, null, 2));
-  console.log('Cookies saved to cookies.json');
 }
 )
