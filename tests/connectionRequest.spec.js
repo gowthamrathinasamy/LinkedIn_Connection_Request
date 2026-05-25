@@ -11,7 +11,7 @@ test('send LinkedIn connection requests in batches of 50 per page', async ({ pag
   await context.addCookies(cookies);
 
   await page.goto(LINKEDIN_SEARCH_URL);
-  const connectButton = pagßße.getByRole('button', { name: /to connect/i });
+  const connectButton = page.getByRole('button', { name: /to connect/i });
   //let counter = 0;
   //const count = await connectButton.count();
   let i = 0;
